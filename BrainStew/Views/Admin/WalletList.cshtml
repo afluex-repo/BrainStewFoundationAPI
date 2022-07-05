@@ -1,0 +1,160 @@
+﻿@model BrainStew.Models.Admin
+
+@{
+    ViewBag.Title = "WalletList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("WalletList", "Admin", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row layout-top-spacing">
+            <div class="col-lg-12 col-12 layout-spacing">
+                <div class="statbox widget box box-shadow">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                <h4>Wallet List</h4>
+                                <span class="text-danger">
+                                    @TempData["msg"]
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-content widget-content-area">
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="form-group row">
+                                    <div class="col-sm-9">
+                                        From Date
+                                        @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", @placeholder = "dd/mm/yy", @readonly = true })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group row">
+                                    <div class="col-sm-9">
+                                        To Date
+                                        @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", @placeholder = "dd/mm/yy", @readonly = true })
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3" style="margin-top:25px;">
+                                <div class="form-group row">
+                                    <div class="col-sm-9">
+                                        <input class="btn btn-success pull-left" type="submit" value="Get Details" id="GetDetails" name="GetDetails" />
+                                    </div>
+                                </div>
+                            </div>
+                            <table id="html5-extension" class="table table-hover non-hover table-responsive" data-page-length='20'>
+                                <thead>
+                                    <tr>
+                                        <th>Sr No.</th>
+                                        @*<th>Request Code</th>*@
+                                        <th>Login Id</th>
+                                        <th>Name</th>
+                                        <th>Amount</th>
+                                        <th>Payment Mode</th>
+                                        <th>Requested Date</th>
+                                        <th>Document</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        if (Model.lstWallet != null)
+                                        {
+                                            int i = 1;
+                                            foreach (var Item in Model.lstWallet)
+                                            {
+                                                <tr class="text-left">
+                                                    <td>@i</td>
+                                                    @*<td>@Item.RequestCode</td>*@
+                                                    <td>@Item.LoginId</td>
+                                                    <td>@Item.DisplayName</td>
+                                                    <td>@Item.Amount</td>
+                                                    @if (@Item.PaymentMode == "Cash")
+                                                    {
+                                                        <td>@Item.PaymentMode</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>@Item.PaymentMode- (@Item.BankName,@Item.BankBranch, <b>Txn No.-@Item.ChequeDDNo</b>, <b>Txn Date-</b>@Item.ChequeDDDate)</td>
+                                                    }
+                                                    <td>@Item.TransactionDate</td>
+                                                    <td>@if (Item.PostedFile !="N/A")
+                                                    {
+                                                        <img src="@Item.PostedFile" height="100" />
+                                                    }
+                                                    else
+                                                    {
+                                                        @Item.PostedFile
+                                                    }</td>
+                                                    <td>@Item.Status</td>
+                                                    @if (Item.Status == "Pending")
+                                                    {
+                                                        <td>
+                                                            <a href="/Admin/Approve?id=@Item.RequestID" class="btn btn-success btn-sm " onclick="return confirm('Are you sure you want to Approve this ewallet request ?') ">Approve</a>
+                                                            <a href="/Admin/DeClined?id=@Item.RequestID" class="btn btn-danger btn-sm " onclick="return confirm('Are you sure you want to decline this ewallet request  ?') ">Decline</a>
+
+                                                        </td>
+                                                    }
+                                                    @*else if (Item.Status == "Approved")
+                                                        {
+                                                            <td>*@
+                                                    @*<a href="/Admin/DeClined?id=@Item.RequestID" class="btn btn-danger btn-sm " onclick="return confirm('Are you sure you want to decline this ewallet request  ?') ">Decline</a>*@
+
+                                                    @*<span>Approved</span>*@
+
+
+                                                    @*</td>
+                                                        }*@
+                                                    @*else if (Item.Status == "Declined")
+                                                        {
+                                                            <td>*@
+                                                    @*<a href="/Admin/Approve?id=@Item.RequestID" class="btn btn-success btn-sm " onclick="return confirm('Are you sure you want to Approve this ewallet request  ?') ">Approve</a>*@
+
+                                                    @*<span>Declined</span>*@
+                                                    @*</td>
+                                                        }*@
+                                                    else
+                                                    {
+                                                    }
+                                                </tr>
+                                                i++;
+                                            }
+
+
+
+
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+<script>
+    $('#FromDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+    });
+    $('#ToDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+    });
+
+</script>
+
+

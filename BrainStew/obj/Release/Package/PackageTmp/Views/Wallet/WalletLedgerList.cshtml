@@ -1,0 +1,227 @@
+﻿@model BrainStew.Models.UserWallet
+
+@{
+    ViewBag.Title = "WalletLedgerList";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("WalletLedgerList", "Wallet", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row layout-top-spacing">
+            <div class="col-lg-12 col-12 layout-spacing">
+                <div class="statbox widget box box-shadow">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                <h4>Topup Wallet Ledger</h4>
+                                <span class="text-danger">
+                                    @TempData["Package"]
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-content widget-content-area">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group row">
+                                    <div class="col-sm-9">
+                                        From Date
+                                        @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", @Placeholder = "From Date", @readonly = true })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group row">
+                                    <div class="col-sm-9">
+                                        To Date
+                                        @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", @Placeholder = "To Date", @readonly = true })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="margin-top:25px;">
+                                <div class="form-group">
+                                    <input class="btn btn-success pull-left" type="submit" value="Search" id="Search" name="Search" />
+                                    @*<a onclick="openPopup();" class="btn btn-success pull-right mb-2">Transfer to Other</a>*@
+                                </div>
+                            </div>
+                            <table id="html5-extension" class="table table-hover non-hover" style="width:100%" data-page-length='20'>
+                                <thead>
+                                    <tr>
+                                        <th>S No.</th>
+                                        <th>Cr Amount</th>
+                                        <th>Dr Amount</th>
+                                        @*<th>Balance</th>*@
+                                        <th>Narration</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        if (Model.lstWalletLedger != null)
+                                        {
+                                            int i = 1;
+                                            foreach (var Item in Model.lstWalletLedger)
+                                            {
+                                                <tr class="text-left">
+                                                    <td>@i</td>
+                                                    <td>@Item.CrAmount</td>
+                                                    <td>@Item.DrAmount</td>
+                                                    @*<td>@Item.Balance</td>*@
+                                                    <td>@Item.Narration</td>
+                                                    <td>@Item.TransactionDate</td>
+                                                </tr>
+                                                i++;
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                       <th></th>
+                                        <th>Total Cr Amount : @ViewBag.TotalCrAmount</th>
+                                        <th> Total Dr Amount : @ViewBag.TotalDrAmount</th>
+                                        <th>Available Balance : @ViewBag.Available</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog" style="display: none;padding-top:55px;">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Transfer to Other</h5>
+                    <button type="button" class="close" data-dismiss="modal" onclick="closeModal();">&times;</button>
+                </div>
+                <div class="modal-body" style="color: black">
+                    <p class="text-danger">Wallet Balance :@ViewBag.BalanceAmount</p>
+                    <input type="hidden" id="hdnBalance" value="@ViewBag.BalanceAmount" />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>LoginId</label>
+                                @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @placeholder = "LoginId" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Amount</label>
+                                @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @placeholder = "Amount", onkeypress = "return isNumberOrDecimal(event);" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="button" class="btn btn-sm btn-success" onclick="return TransfertoOther()" value="Transfer" />&nbsp;&nbsp;
+                                <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal" onclick="closeModal();">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+
+<script>
+    $('#FromDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+    });
+    $('#ToDate').datepicker({
+        dateFormat: 'dd/mm/yy',
+    });
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+
+   
+    function openPopup() {
+        debugger
+        jQuery.noConflict();
+        //$("#Pk_ExpenseDetailsId").val(HeadName)
+        $("#myModal").modal('show');
+    }
+   
+    function TransfertoOther() {
+        debugger;
+        jQuery.noConflict();
+        $(".errortext").removeClass("errortext");
+        var Transferloginid = $("#LoginId").val();
+        var Amount = $("#Amount").val();
+        var HdnBalance = $('#hdnBalance').val();
+        if (Transferloginid == "") {
+            $("#LoginId").addClass('errortext');
+            $('#LoginId').focus();
+            return false;
+        }
+        if (Amount == "" || Amount == "0") {
+            $("#Amount").addClass('errortext');
+            $('#Amount').focus();
+            return false;
+        }
+        if ((Number)(Amount) > (Number)(HdnBalance)) {
+            $("#Amount").addClass('errortext');
+            $('#Amount').focus();
+            $("#Amount").val('');
+            alert("Amount cannot be greater than Balance Amount.");
+            return false;
+        }
+        else {
+            $.ajax({
+                url: "/Report/TransferotherWallet",
+                Type: "Get",
+                DataType: "JSON",
+                data: { LoginId: $("#LoginId").val(), Amount: $("#Amount").val() },
+                success: function (data) {
+                    if (data.Result == 1) {
+                        alert("Amount has been transferred.");
+                        $("#myModal").modal('hide');
+                        location.reload();
+                    }
+                    else {
+                        alert(data.Result);
+                    }
+                }
+            });
+        }
+
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

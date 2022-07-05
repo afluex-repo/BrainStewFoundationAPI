@@ -1,0 +1,236 @@
+﻿@model BrainStew.Models.UserReports
+
+@{
+    ViewBag.Title = "PayoutWallet";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<link href="~/plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
+<link href="~/plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+@using (Html.BeginForm("PayoutWalletLedger", "Report", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+<div class="container">
+    <div class="row layout-top-spacing">
+        <div class="col-lg-12 col-12 layout-spacing">
+            <div class="statbox widget box box-shadow">
+                <div class="widget-header">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                            <h4>My Wallet</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-content widget-content-area">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3">
+                            <div class="form-group">
+                                <label>
+                                    From Date 
+                                </label>
+                                @Html.TextBoxFor(m => m.FromDate, new { @class = "form-control", @Placeholder = "From Date" })
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="form-group">
+                                <label> To Date</label>
+                                @Html.TextBoxFor(m => m.ToDate, new { @class = "form-control", @Placeholder = "To Date" })
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-4" style="margin-top:28px">
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-success pull-left" value="Search" name="btnSearch" />
+                                @*<a onclick="openPopup();" class="btn btn-success pull-right">Transfer to Payout Wallet</a>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table id="html5-extension" class="table table-hover non-hover" data-page-length='20'>
+                            <thead>
+                                <tr>
+                                    <th>Sr No.</th>
+                                    <th>Narration</th>
+                                    <th>Login Id</th>
+                                    <th>Cr. Amount</th>
+                                    <th>Dr. Amount</th>
+                                    <th>Transaction Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    if (Model.lst != null)
+                                    {
+                                        int i = 1;
+                                        foreach (var Item in Model.lst)
+                                        {
+                                            <tr class="text-left">
+                                                <td>@i</td>
+                                                <td>@Item.Narration</td>
+                                                <td>@Item.LoginId</td>
+                                                <td>@Item.CrAmount</td>
+                                                <td>@Item.DrAmount</td>
+                                                <td>@Item.TransactionDate</td>
+                                            </tr>
+                                            i++;
+                                        }
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog" style="display: none;padding-top:55px;">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Transfer to Payout Wallet</h5>
+                    <button type="button" class="close" data-dismiss="modal" onclick="closeModal();">&times;</button>
+                </div>
+                <div class="col-12 col-md-12">
+                    <h6 style="color:green">
+                        <span id="lblf" style="color:green;">Comming Soon</span>
+                    </h6>
+                </div>
+                @*<div class="modal-body" style="color: black">
+                    <p class="text-danger">Wallet Balance :@ViewBag.BalanceAmount</p>
+                    <input type="hidden" id="hdnBalance" value="@ViewBag.BalanceAmount" />
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Amount</label>
+                                @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @placeholder = "Amount", onkeypress = "return isNumberOrDecimal(event);", @onchange = "return GetFinalAmount();" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6" style="margin-top:28px">
+                            <div class="form-group">
+                                <h6 style="color:red">Transfer Charges:  <label id="lbld" style="color:red;">0</label></h6><br />
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <h6 style="color:green">
+                                <span id="lblf" style="color:green;">Comming Soon</span>
+                            </h6>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="button" class="btn btn-sm btn-success mt-10" onclick="return TransfertoOther()" value="Transfer" />&nbsp;&nbsp;
+                                <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal" onclick="closeModal();">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+                <div class="modal-footer">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+}
+<script src="~/plugins/flatpickr/flatpickr.js"></script>
+<script src="~/plugins/flatpickr/custom-flatpickr.js"></script>
+<script>
+    var f3 = flatpickr(document.getElementById('FromDate'), {
+        mode: "range"
+    });
+    var f4 = flatpickr(document.getElementById('ToDate'), {
+        mode: "range"
+    });
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+    function GetFinalAmount() {
+        debugger;
+        var amount = $("#Amount").val();
+        if (Number(amount) > 25000) {
+            alert('you can not enter amount greater than 25k');
+            $("#Amount").val('');
+            $("#lbld").text(parseFloat(0));
+            $("#lblf").text(parseFloat(0));
+        }
+        else {
+            var deductionAmount = parseFloat($("#Amount").val()) * 0.15;
+            //if (parseFloat($("#Amount").val()) < 500) {
+            //    deductionAmount = 10;
+            //}
+            $("#lbld").text(parseFloat(deductionAmount));
+            var finalAmount = parseFloat($("#Amount").val()) - parseFloat(deductionAmount);
+            $("#lblf").text(parseFloat(finalAmount));
+        }
+    }
+    function openPopup() {
+        debugger
+        jQuery.noConflict();
+        //$("#Pk_ExpenseDetailsId").val(HeadName)
+        $("#myModal").modal('show');
+    }
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31
+          && (charCode < 48 || charCode > 57))
+            return false;
+
+        return true;
+    }
+    function TransferAmount() {
+        debugger;
+        jQuery.noConflict();
+        $(".errortext").removeClass("errortext");
+        var Transferloginid = $("#LoginId").val();
+        var Amount = $("#Amount").val();
+        var HdnBalance = $('#hdnBalance').val();
+        var TransactionDate = $('#TransactionDate').val();
+        if (Transferloginid == "") {
+            $("#LoginId").addClass('errortext');
+            $('#LoginId').focus();
+            return false;
+        }
+        if (Amount == "" || Amount == "0") {
+            $("#Amount").addClass('errortext');
+            $('#Amount').focus();
+            return false;
+        }
+        if ((Number)(Amount) > (Number)(HdnBalance)) {
+            $("#Amount").addClass('errortext');
+            $('#Amount').focus();
+            $("#Amount").val('');
+            alert("Amount cannot be greater than Balance Amount.");
+            return false;
+        }
+        else {
+            $.ajax({
+                url: "/Admin/TransferAcccountHead",
+                Type: "Get",
+                DataType: "JSON",
+                data: { AccountHeadId: $("#AccountHeadId").val(), FK_AccountHeadId: $("#FK_AccountHeadId").val(), Amount: $("#Amount").val(), TransactionDate: $("#TransactionDate").val() },
+                success: function (data) {
+                    if (data.Result == 1) {
+                        alert("Amount has been transferred.");
+                        $("#myModal").modal('hide');
+                        location.reload();
+                    }
+                    else {
+                        alert(data.Result);
+                    }
+
+
+                }
+            });
+        }
+
+    }
+</script>
+

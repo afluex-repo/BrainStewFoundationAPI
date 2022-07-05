@@ -1,0 +1,83 @@
+﻿@model BrainStew.Models.AdminReports
+
+@{
+    ViewBag.Title = "ViewStewMatrixBenefitsListByUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
+<link href="~/plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+@using (Html.BeginForm("ViewStewMatrixBenefitsListByUser", "AdminReports", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row layout-top-spacing">
+            <div class="col-lg-12 col-12 layout-spacing">
+                <div class="statbox widget box box-shadow">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-6 col-md-6 col-sm-6 col-6">
+                                <h4>@TempData["BenefitsName"]</h4>
+                            </div>
+                            <div class="col-xl-6 col-md-6 col-sm-6 col-6 text-right mt-2">
+                                <a class="btn btn-info btn-sm" href="@TempData["BenefitsNameList"]">Back to List</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="widget-content widget-content-area">
+                        <div class="row">
+                            <table id="html5-extension" class="table table-hover non-hover" data-page-length='20'>
+                                <thead>
+                                    <tr>
+                                        <th>Sr No.</th>
+                                        <th>From Member</th>
+                                        <th>To Member</th>
+                                        <th>Donation Amount</th>
+                                        <th>Benefits</th>
+                                        <th>Status</th>
+                                        <th>Transaction Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        if (Model.lst != null)
+                                        {
+                                            int i = 1;
+                                            foreach (var Item in Model.lst)
+                                            {
+                                                <tr class="text-left">
+                                                    <td>@i</td>
+                                                    <td>@Item.FromName (@Item.FromLoginID)</td>
+                                                    <td>@Item.ToName</td>
+                                                    <td>@Item.BusinessAmount</td>
+                                                    <td>@Item.Amount</td>
+                                                    <td>@Item.Status</td>
+                                                    <td>@Item.TransactionDate</td>
+                                                </tr>
+                                                i++;
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/plugins/flatpickr/flatpickr.js"></script>
+<script src="~/plugins/flatpickr/custom-flatpickr.js"></script>
+<script src="~/BrainStewWebsite/assets/js/jquery.min.js"></script>
+<script>
+    var f3 = flatpickr(document.getElementById('FromDate'), {
+        mode: "range"
+    });
+    var f4 = flatpickr(document.getElementById('ToDate'), {
+        mode: "range"
+    });
+    //$("#Status").val($("#st").val()).attr("selected", "selected");
+</script>
+

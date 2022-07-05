@@ -1,0 +1,102 @@
+﻿@model BrainStew.Models.UserWallet
+
+@{
+    ViewBag.Title = "TransfertoPayoutWallet";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<link href="~/plugins/flatpickr/flatpickr.css" rel="stylesheet" type="text/css">
+<link href="~/plugins/flatpickr/custom-flatpickr.css" rel="stylesheet" type="text/css">
+<link href="~/plugins/sweetalerts/sweetalert.css" rel="stylesheet" type="text/css" />
+<link href="~/assets/css/components/custom-sweetalert.css" rel="stylesheet" type="text/css" />
+@using (Html.BeginForm("TransfertoPayoutWallet", "Wallet", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row layout-top-spacing">
+            <div class="col-lg-12 col-12 layout-spacing">
+                <div class="statbox widget box box-shadow">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                <h4>Transfer To Topup Wallet</h4>
+                                <span class="text-danger">
+                                    @TempData["msg"]
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-content widget-content-area">
+                        <p style="color:red">Note : 10% Transfer Charges</p><br />
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3">
+                                <div class="form-group">
+                                    Balance <span style="color: red">*</span>
+                                    @Html.TextBoxFor(m => m.Balance, new { @class = "form-control", @Readonly = "true"})
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3">
+                                <div class="form-group">
+                                    Amount<span style="color: red">*</span>
+                                 
+                                    @Html.TextBoxFor(m => m.Amount, new { @class = "form-control", @Placeholder = "Amount", @onkeypress = "return GetFinalAmount();" }) , @*@onkeypress = "return isNumberKey(event);"*@
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3" style="margin-top:28px">
+                                <div class="form-group">
+                                    <input class="btn btn-success pull-left" type="submit" value="Transfer" id="TransferPayoutWallet" name="TransferPayoutWallet" onclick="return Validate()" />
+                                  
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6" style="margin-top:28px">
+                                <div class="form-group">
+                                    <h6 style="color:red">Transfer Charges:  <label id="lbld" style="color:red;">0</label></h6><br />
+                                    <h6 style="color:green">
+                                        Final Amount to be transferred into Topup wallet:  <span id="lblf" style="color:green;">0</span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/plugins/flatpickr/flatpickr.js"></script>
+<script src="~/plugins/flatpickr/custom-flatpickr.js"></script>
+<script src="~/assets/js/libs/jquery-3.1.1.min.js"></script>
+<script src="~/plugins/sweetalerts/sweetalert2.min.js"></script>
+<script src="~/plugins/sweetalerts/custom-sweetalert.js"></script>
+<script>
+    function Validate() {
+        debugger;
+        $(".errortext").removeClass("errortext");
+        if ($('#Amount').val() == '0' || $('#Amount').val() == '') {
+            $("#Amount").addClass('errortext');
+            $('#Amount').focus();
+            return false;
+        }
+        if (parseFloat($("#Amount").val()) < 1) {
+            alert("Transfer amount should not be less than 1 Rs.");
+            return false;
+        }
+    }
+
+    function GetFinalAmount() {
+        debugger;
+        var amount = $("#Amount").val();
+        var balance = $("#Balance").val();
+        if (Number(amount) > Number(balance)) {
+            alert('you can not enter amount greater than balance amount');
+            $("#Amount").val('');
+            $("#lbld").text(parseFloat(0));
+            $("#lblf").text(parseFloat(0));
+        }
+        else {
+            var deductionAmount = (parseFloat($("#Amount").val()) * 0.10).toFixed(2);
+            $("#lbld").text(parseFloat(deductionAmount));
+            var finalAmount = parseFloat($("#Amount").val()) - parseFloat(deductionAmount);
+            $("#lblf").text(parseFloat(finalAmount));
+        }
+    }
+</script>

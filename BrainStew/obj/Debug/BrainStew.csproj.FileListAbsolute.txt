@@ -1,0 +1,215 @@
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\ApplicationInsights.config
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\csc.exe
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\System.Collections.Immutable.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\System.Reflection.Metadata.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\vbc.exe
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\VBCSCompiler.exe
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\roslyn\VBCSCompiler.exe.config
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\BrainStew.dll.config
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\BrainStew.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\BrainStew.pdb
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.DependencyCollector.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Web.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.WindowsServer.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.ApplicationInsights.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.Web.Infrastructure.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Newtonsoft.Json.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Net.Http.Formatting.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Helpers.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.WebHost.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Mvc.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Razor.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Deployment.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Razor.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.DependencyCollector.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Web.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.WindowsServer.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.ApplicationInsights.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Razor.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Deployment.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Razor.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Helpers.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Mvc.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\Newtonsoft.Json.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Net.Http.Formatting.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.WebHost.xml
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.dll
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.pdb
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\ApplicationInsights.config
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\csc.exe
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\System.Collections.Immutable.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\System.Reflection.Metadata.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\vbc.exe
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\VBCSCompiler.exe
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\roslyn\VBCSCompiler.exe.config
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\BrainStew.dll.config
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\BrainStew.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\BrainStew.pdb
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Agent.Intercept.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.DependencyCollector.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Web.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.WindowsServer.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.ApplicationInsights.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.Web.Infrastructure.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Newtonsoft.Json.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Net.Http.Formatting.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Helpers.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.WebHost.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Mvc.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Razor.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Deployment.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Razor.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.DependencyCollector.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Web.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.WindowsServer.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.ApplicationInsights.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Razor.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Deployment.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Razor.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Helpers.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Mvc.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\Newtonsoft.Json.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Net.Http.Formatting.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.WebHost.xml
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.dll
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.pdb
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\ApplicationInsights.config
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\csc.exe
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\System.Collections.Immutable.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\System.Reflection.Metadata.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\vbc.exe
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\VBCSCompiler.exe
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\roslyn\VBCSCompiler.exe.config
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\BrainStew.dll.config
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\BrainStew.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\BrainStew.pdb
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.DependencyCollector.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Web.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.WindowsServer.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.ApplicationInsights.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.Web.Infrastructure.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Newtonsoft.Json.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Net.Http.Formatting.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Helpers.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.WebHost.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Mvc.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Razor.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Deployment.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Razor.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.DependencyCollector.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Web.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.WindowsServer.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.ApplicationInsights.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Razor.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Deployment.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Razor.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Helpers.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Mvc.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\Newtonsoft.Json.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Net.Http.Formatting.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\bin\System.Web.Http.WebHost.xml
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.dll
+D:\Ashwani Afluex\repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.pdb
+E:\Repository\BrainStewClowd\BrainStew\bin\ApplicationInsights.config
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\csc.exe
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\System.Collections.Immutable.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\System.Reflection.Metadata.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\vbc.exe
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\VBCSCompiler.exe
+E:\Repository\BrainStewClowd\BrainStew\bin\roslyn\VBCSCompiler.exe.config
+E:\Repository\BrainStewClowd\BrainStew\bin\BrainStew.dll.config
+E:\Repository\BrainStewClowd\BrainStew\bin\BrainStew.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\BrainStew.pdb
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.DependencyCollector.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Web.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.WindowsServer.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.ApplicationInsights.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.Web.Infrastructure.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Newtonsoft.Json.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Net.Http.Formatting.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Helpers.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Http.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Http.WebHost.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Mvc.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Razor.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Deployment.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Razor.dll
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.DependencyCollector.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.Web.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.AI.WindowsServer.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.ApplicationInsights.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Razor.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Deployment.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Webpages.Razor.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Helpers.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Mvc.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\Newtonsoft.Json.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Net.Http.Formatting.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Http.xml
+E:\Repository\BrainStewClowd\BrainStew\bin\System.Web.Http.WebHost.xml
+E:\Repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.dll
+E:\Repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.pdb
+E:\SachinMishraProject\repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.csprojResolveAssemblyReference.cache
+E:\Repository-Projects\repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.csprojResolveAssemblyReference.cache
+E:\Repository\BrainStewClowd\BrainStew\obj\Debug\BrainStew.csprojResolveAssemblyReference.cache

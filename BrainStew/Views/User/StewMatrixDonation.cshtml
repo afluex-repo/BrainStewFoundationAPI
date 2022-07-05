@@ -1,0 +1,125 @@
+﻿@model BrainStew.Models.Account
+
+@{
+    ViewBag.Title = "StewMatrixDonation";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@using (Html.BeginForm("StewMatrixDonation", "User", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row layout-top-spacing">
+            <div class="col-lg-12 col-12 layout-spacing">
+                <div class="statbox widget box box-shadow">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                <h4>Stew Matrix Benefits</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-content widget-content-area">
+                        <div class="row mb-4">
+                            <div class="col-md-12">
+                                <input type="hidden" id="WalletAmount" value="@ViewBag.WalletBalance" />
+                                <label style="color:red">Topup Wallet Balance: @ViewBag.WalletBalance</label>
+
+                                @if (ViewBag.WalletBalance == "0")
+                                {
+                                    <a class="btn btn-primary" style="float: right;" href="/Wallet/AddWallet">Add Fund</a>
+                                }
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <label for="LoginId">LoginId</label>
+                                @Html.TextBoxFor(m => m.LoginId, new { @class = "form-control", @placeholder = "Login Id", @disabled = "disabled" })
+                                <p class="text-success" id="spName"></p>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="LoginId">Amount</label>
+                                @Html.TextBoxFor(m => m.DonationAmount, new { @class = "form-control", @placeholder = "Donation Amount", @disabled = "disabled" })
+                                @Html.HiddenFor(m => m.DonationPlanId)
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            @if (Model.UpdatedDonationPlanId == "10")
+                            {
+                                <h6 style="color:green">You have already completed your donation level</h6>
+                            }
+                            else
+                            {
+                                if (ViewBag.WalletBalance != "0")
+                                {
+                                    <input type="submit" class="btn btn-sm btn-success fa-pull-left" onclick="return CheckWalletBalance();" id="btnActivate" name="btnActivate" value="Update Level" />
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/BrainStewWebsite/assets/js/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        if(@Model.UpdatedDonationPlanId < "3")
+        {
+            var r = confirm('Please Complete your third level then use stew matrix donation !!');
+            window.location.href = '@Url.Action("UserDashboard", "User")';
+
+        }
+    });
+    function CheckWalletBalance() {
+        debugger
+        var r = confirm('मैं Brainstew Foundation में अपने स्वेछा से पूर्ण होशो हवास में बिना किसी के दबाव में अपनी राशि को डोनेट कर रहा हूँ  और इस डोनेशन को मैं वापिस लेने के लिए या किसी भी लालच में आकर नही कर रहा हूँ |');
+        if (r == true) {
+            debugger
+            $("#preloader").css({'display': '' });
+            $("#status").css({ 'display': '' });
+            var WalletBalance = $("#WalletAmount").val();
+            var Amount =$("#DonationAmount").val();
+            var donationplanid = $("#DonationPlanId").val();
+            if ($("#DonationAmount").val() == "0" || $("#DonationAmount").val() == "")
+            {
+                alert('please fill amount for donation !!')
+                $("#preloader").css({ 'display': 'none' });
+                $("#status").css({ 'display': 'none' });
+                window.location.reload();
+                return false();
+            }
+            if (Number(WalletBalance) < Number(Amount)) {
+                alert('Donate Amount is less than balance amount please add amount in your wallet !!')
+                window.location.href = '@Url.Action("AddWallet", "Wallet")';
+                $("#preloader").css({'display': '' });
+                $("#status").css({'display': '' });
+                return false;
+            }
+            else {
+                $("#preloader").css({'display': '' });
+                $("#status").css({'display': '' })
+                $.ajax({
+                    url: "/User/SaveStewMatrixDonation",
+                    Type: "Get",
+                    DataType: "JSON",
+                    data: { Amount: Amount, donationplanid: donationplanid },
+                    success: function (data) {
+                        if (data.Result = "1") {
+                            alert('Donate Amount Successfully !!')
+                            @*window.location.href = '@Url.Action("DonationByWallet", "User")';*@
+                            window.location.reload();
+                        }
+                        else {
+                            alert(data.Result);
+                            $("#preloader").css({'display': 'none' });
+                            $("#status").css({'display': 'none' });
+                        }
+                    }
+                });
+            }
+        }
+    }
+</script>
+
