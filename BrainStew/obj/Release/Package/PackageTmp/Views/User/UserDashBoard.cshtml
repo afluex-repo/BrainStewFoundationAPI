@@ -1,0 +1,594 @@
+﻿@model BrainStew.Models.Dashboard
+
+@{
+    ViewBag.Title = "UserDashBoard";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
+<link href="~/assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
+<link href="~/assets/css/elements/alert.css" rel="stylesheet" />
+<style>
+    @@media(max-width:600px) {
+        .col-xl-3 {
+            max-width: 100% !important;
+        }
+    }
+
+    @@media(min-width:768px) and (max-width:992px) {
+        .col-xl-3 {
+            max-width: 25% !important;
+        }
+
+        .particular-balance.d-flex p {
+            font-size: 13px !important;
+        }
+    }
+
+    @@media(max-width:1024px) and (min-width:1024px) {
+        .col-xl-3 {
+            max-width: 25% !important;
+        }
+
+        .particular-balance.d-flex p {
+            font-size: 10px !important;
+        }
+
+        .s-icon a {
+            margin: 0px;
+            width: 25px;
+            height: 25px;
+            line-height: 23px;
+        }
+    }
+
+    .icon_css {
+        height: 40px;
+        width: 40px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        padding: 5px 10px 0px 9px;
+        background: #fff;
+    }
+
+    .col-xl-3 {
+        max-width: 20%;
+    }
+</style>
+
+<div class="layout-px-spacing" style="margin-bottom: 70px;">
+    <div class="row layout-top-spacing">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three one">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-shopping-cart" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.Status</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>Status</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three second">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.TotalDonation</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>My Donation</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three four">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-user" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.TotalDirect</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>Direct Member</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three four">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.ReferralIncentive</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b> Referral Benefits </b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three five">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.LevelIncome</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>Level Benefits</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three six">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.LevelUpgradeIncome</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>Placement Benefits</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three one">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.ReferralSponsorIncome</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>Upgrade Sponsor Benefits</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three nine">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa fa-user" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.MatrixIncomeUpdateDate</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>BRAIN LEVEL @ViewBag.MatrixIncomeLevel ACTIVE</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three three">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="bg-white text-black border-10 p-2">@ViewBag.ForeverMatrixIncome</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv"></div>
+                        <div class="seconddiv">
+                            <p><b>Brain Matrix Benefits</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three nine">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.ForeverLevelIncome </h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv"></div>
+                        <div class="seconddiv">
+                            <p><b>Brain Matrix Level Benefits</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three ten">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.TotalIncome</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b> Total Benefits </b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three four">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-briefcase" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.TopupWallet</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>Topup Wallet</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three seven">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-briefcase" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.TotalWalletAmount</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>My Wallet</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three four">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.WithdrawlAmount</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>Withdrawl Amount</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three six">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-briefcase" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.MatrixWallet</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b> Stew Matrix Level Benefits</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three three">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-level-up" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.CurrentLevel</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>Current Level</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three one">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-user" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.UpgradeMatrix</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>STEW MATRIX @ViewBag.UpgradeMatrix ACTIVE</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three five">
+                <div class="widget-heading" style="background: linear-gradient(60deg,#4a4338,#6c838d);">
+                    <div class="wallet-balance">
+                        <div>
+                            <p style="padding:4px;">SHARE REFERAL LINK</p>
+                            @if (Session["LoginId"].ToString() != "")
+                            {
+                                //var link = Session["Pk_UserId"].ToString();
+
+                                <span class="s-icon"><a href="mailto:?subject= Referral Link &amp;body=http://brainstewfoundation.com//Home/Registration?Pid=@Session["Encrytid"].ToString(). Thanks." target="_blank" style="background:#871505"><i class="fa fa-envelope fa-md"></i></a></span>
+                                <span class="s-icon"><a href="https://api.whatsapp.com/send?text=http://brainstewfoundation.com//Home/Registration?Pid=@Session["Encrytid"].ToString()" target="_blank" style="background:#42f560" data-action="share/whatsapp/share"><i class="fa fa-whatsapp fa-md"></i></a></span>
+                                <span class="s-icon"><a href="https://www.facebook.com/sharer.php?u=http://brainstewfoundation.com//Home/Registration?Pid=@Session["Encrytid"].ToString()" target="_blank" style="background:#4267B2"><i class="fa fa-facebook fa-md"></i></a></span>
+                                <span class="s-icon"><a href="https://www.instagram.com/?url=http://brainstewfoundation.com//Home/Registration?Pid=@Session["Encrytid"].ToString()" target="_blank" style="background:#E1306C"><i class="fa fa-instagram fa-md"></i></a></span>
+                                <span class="s-icon"><a href="https://twitter.com/intent/tweet?text=http://brainstewfoundation.com//Home/Registration?Pid=@Session["Encrytid"].ToString()" target="_blank" style="background:#1DA1F2"><i class="fa fa-twitter fa-md"></i></a></span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-table-one">
+                    <div class="widget-heading">
+                        <h6 class="font-weight-bold">Copy Referral Link</h6>
+                    </div>
+                    <div class="widget-content">
+                        <div class="weekly-bestsellers">
+                            <div class="t-item">
+                                <input type="hidden" name="leftlink" id="leftlink" value="http://brainstewfoundation.com//Home/Registration?Pid=@Session["Encrytid"].ToString()" class="form-control">
+                                <a class="btn btn-block btn-success" onclick="myFunction(1);">
+                                    <i class="fa fa-copy text-white"></i> &nbsp;Copy Referral Link
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-account-invoice-three one">
+                <div class="widget-heading">
+                    <a href="#">
+                        <div class="wallet-balance">
+                            <p class="icon_css"><i class="fa fa-inr" style="color:#009286"></i></p>
+                            <h5 class="text-white text-uppercase">@ViewBag.Stewmatrixincome</h5>
+                        </div>
+                    </a>
+                    <div class="particular-balance d-flex mt-2">
+                        <div class="fisrtdiv">
+                        </div>
+                        <div class="seconddiv">
+                            <p><b>Stew Matrix Benefits</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mt-2">
+            <div class="widget widget-table-one">
+                <div class="widget-heading">
+                    <h6 class="font-weight-bold">Copy Referral Link</h6>
+                </div>
+                <div class="widget-content">
+                    <div class="weekly-bestsellers">
+                        <div class="t-item">
+                            <input type="hidden" name="leftlink" id="leftlink" value="http://brainstewfoundation.com//Home/Registration?Pid=@Session["Encrytid"].ToString()" class="form-control">
+                            <a class="btn btn-block btn-success" onclick="myFunction(1);">
+                                <i class="fa fa-copy text-white"></i> &nbsp;Copy Referral Link
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
+            <div class="widget widget-chart-two bg-white">
+                <div class="widget-heading">
+                    <h6 class="font-weight-bold">News</h6>
+                </div>
+                <div class="widget-content1">
+                   
+                    <marquee direction="up" height="150px" scrollamount="3" style="color: #cf0c0c;font-size:15px;padding: 35px;">
+                        @if (Model != null)
+                        {
+                            if (Model.lstnews != null)
+                            {
+                            
+                                foreach (var Item in Model.lstnews)
+                                {
+                                    @Item.News
+                                }
+                            }
+                        }
+                    </marquee>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+
+        </div>
+    </div>
+</div>
+<script src="~/plugins/apex/apexcharts.min.js"></script>
+<script src="~/plugins/apex/custom-apexcharts.js"></script>
+<script src="~/assets/js/libs/jquery-3.1.1.min.js"></script>
+<script src="~/plugins/sweetalerts/sweetalert2.min.js"></script>
+<script src="~/plugins/sweetalerts/custom-sweetalert.js"></script>
+<script>
+    function myFunction(type) {
+        // alert("a");
+        if (type == 1)
+            var target = $("#leftlink").val();
+        else
+            var target = $("#rightlink").val();
+        copyClipboard(target);
+        //alert("Referral Link Copied Successfully");
+        swal('Referral Link', "Referral Link Copied Successfully", 'success');
+        return;
+    }
+    function copyClipboard(e) {
+
+        var tempItem = document.createElement('input');
+
+        tempItem.setAttribute('type', 'text');
+        tempItem.setAttribute('display', 'none');
+
+        let content = e;
+        if (e instanceof HTMLElement) {
+            content = e.innerHTML;
+        }
+
+        tempItem.setAttribute('value', content);
+        document.body.appendChild(tempItem);
+
+        tempItem.select();
+        document.execCommand('Copy');
+
+        tempItem.parentElement.removeChild(tempItem);
+    }
+
+</script>
+<script>
+    var donutChart1 = {
+
+        chart: {
+            height: 300,
+            type: 'donut',
+            toolbar: {
+                show: false,
+            }
+        },
+
+        //PPP Id
+
+        labels: ['Active', 'InActive'],
+        colors: ['#d7740f', '#f10909'],
+        series: [@ViewBag.TotalActive, @ViewBag.TotalInActive],
+        borderColor: '#F97300',
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 200
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    }
+    var donut1 = new ApexCharts(
+        document.querySelector("#chart-user"),
+        donutChart1
+    );
+    donut1.render();
+
+    var donutChart2 = {
+
+        chart: {
+            height: 300,
+            type: 'donut',
+            toolbar: {
+                show: false,
+            }
+        },
+        labels: ['Joining', 'PPP'],
+        colors: ['#d7740f', '#168733'],
+        series: [@ViewBag.Tr1Business, @ViewBag.Tr2Business],
+        borderColor: '#F97300',
+        responsive: [{
+            breakpoint: 480,
+            options: {
+                chart: {
+                    width: 250
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }]
+    }
+    var donut2 = new ApexCharts(
+       document.querySelector("#chart-user2"),
+       donutChart2
+   );
+
+    donut2.render();
+</script>
